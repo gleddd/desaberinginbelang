@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Desa - Desa Beringin</title>
+    <!-- META TAGS -->
+    <meta name="description" content="Profil lengkap Desa Beringin - Visi Misi, Struktur Organisasi, dan Sejarah Desa">
+    <meta name="keywords" content="Desa Beringin, Profil Desa, Visi Misi, Struktur Organisasi, Sejarah Desa">
+    <meta name="author" content="Desa Beringin">
+    <!-- AKHIR META TAGS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --sage-50: #F8FBF8;
+            --sage-100: #EFF7ED;
+            --sage-200: #DDEBD9;
+            --sage-300: #C4D9BD;
+            --sage-400: #A3C195;
+            --sage-500: #87A87C;
+            --sage-600: #678B5D;
+            --sage-700: #52704A;
+            --sage-800: #425A3C;
+            --sage-900: #384C33;
+            --accent: #A8C3A2;
+            --light: #f8fbf8;
+            --dark: #2C3E2A;
+            --text: #333333;
+            --text-light: #5A6D57;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--sage-50);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles (Sama dengan index.html) */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-top {
+            background-color: var(--sage-800);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 14px;
+        }
+        
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .header-top a {
+            color: var(--sage-200);
+            margin-left: 15px;
+            transition: color 0.3s;
+        }
+        
+        .header-top a:hover {
+            color: var(--white);
+        }
+        
+        .header-main {
+            padding: 15px 0;
+        }
+        
+        .header-main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 70px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            font-size: 24px;
+            color: var(--sage-800);
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        
+        nav ul li a:hover, 
+        nav ul li a.active {
+            background-color: var(--sage-500);
+            color: var(--white);
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 15px 0;
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .breadcrumb ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .breadcrumb li {
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb li:after {
+            content: '/';
+            margin-left: 10px;
+            color: var(--sage-400);
+        }
+        
+        .breadcrumb li:last-child:after {
+            content: '';
+        }
+        
+        .breadcrumb a {
+            color: var(--sage-600);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .breadcrumb li:last-child a {
+            color: var(--sage-800);
+            font-weight: 600;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(66, 90, 60, 0.85), rgba(66, 90, 60, 0.85)), url('') no-repeat center center/cover;
+            color: var(--white);
+            padding: 80px 0 40px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .page-header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .page-header p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--sage-100);
+        }
+        
+        /* Profile Section */
+        .profile-section {
+            padding: 40px 0 80px;
+            background-color: var(--white);
+        }
+        
+        .profile-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--sage-800);
+            position: relative;
+            font-size: 32px;
+        }
+        
+        .profile-section h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--sage-500);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        /* Profile Tabs */
+        .profile-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .profile-tab {
+            padding: 15px 30px;
+            background-color: var(--sage-50);
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--sage-500);
+            color: var(--sage-700);
+        }
+        
+        .profile-tab:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            background-color: var(--sage-100);
+        }
+        
+        .profile-tab.active {
+            background-color: var(--sage-600);
+            color: var(--white);
+        }
+        
+        /* Profile Content */
+        .profile-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .profile-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Profile Card */
+        .profile-card {
+            background-color: var(--sage-50);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--sage-200);
+        }
+        
+        /* Visi Misi Container */
+        .visimisi-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        /* Visi Card */
+        .visi-card {
+            background: linear-gradient(135deg, var(--sage-50) 0%, var(--white) 100%);
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--sage-200);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 6px solid var(--sage-600);
+        }
+        
+        .visi-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Misi Card */
+        .misi-card {
+            background: linear-gradient(135deg, var(--sage-50) 0%, var(--white) 100%);
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--sage-200);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 6px solid var(--sage-500);
+        }
+        
+        .misi-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Card Icon */
+        .card-icon {
+            font-size: 40px;
+            color: var(--sage-600);
+            margin-bottom: 20px;
+            display: inline-block;
+            padding: 15px;
+            background-color: var(--sage-100);
+            border-radius: 50%;
+        }
+        
+        .misi-card .card-icon {
+            color: var(--sage-500);
+        }
+        
+        /* Card Title */
+        .visi-card h3, .misi-card h3 {
+            color: var(--sage-800);
+            font-size: 24px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .visi-card h3:after, .misi-card h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--sage-500);
+        }
+        
+        /* Visi Text */
+        .visi-text {
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--sage-800);
+            font-style: italic;
+            padding: 20px;
+            background-color: rgba(135, 168, 124, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid var(--sage-500);
+            margin-bottom: 20px;
+        }
+        
+        /* Card Badge */
+        .card-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: var(--sage-600);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .misi-card .card-badge {
+            background-color: var(--sage-500);
+        }
+        
+        /* Misi List */
+        .misi-list {
+            list-style: none;
+        }
+        
+        .misi-list li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .misi-list li:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--sage-500);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .misi-list li:nth-child(1):before { content: '1'; }
+        .misi-list li:nth-child(2):before { content: '2'; }
+        .misi-list li:nth-child(3):before { content: '3'; }
+        .misi-list li:nth-child(4):before { content: '4'; }
+        .misi-list li:nth-child(5):before { content: '5'; }
+        .misi-list li:nth-child(6):before { content: '6'; }
+        
+        /* Visi Info */
+        .visi-info {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba(135, 168, 124, 0.05);
+            border-radius: 8px;
+            border: 1px solid var(--sage-200);
+        }
+        
+        .visi-info p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        
+        .visi-info strong {
+            color: var(--sage-700);
+        }
+        
+        /* Tujuan dan Sasaran */
+        .tujuan-sasaran {
+            margin-top: 50px;
+            padding: 40px;
+            background: linear-gradient(135deg, var(--sage-100) 0%, var(--sage-50) 100%);
+            border-radius: 15px;
+            border: 1px solid var(--sage-200);
+        }
+        
+        .tujuan-sasaran h3 {
+            color: var(--sage-800);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .ts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .ts-item {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border: 1px solid var(--sage-200);
+        }
+        
+        .ts-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: var(--sage-400);
+        }
+        
+        .ts-item h4 {
+            color: var(--sage-700);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .ts-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .ts-item li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--text);
+        }
+        
+        .ts-item li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--sage-500);
+            font-size: 20px;
+        }
+        
+        /* Nilai-Nilai Dasar */
+        .nilai-dasar {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: var(--sage-50);
+            border-radius: 10px;
+            border: 1px solid var(--sage-200);
+        }
+        
+        .nilai-dasar h3 {
+            color: var(--sage-800);
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .nilai-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .nilai-item {
+            text-align: center;
+            padding: 20px 15px;
+            flex: 1;
+            min-width: 150px;
+            max-width: 200px;
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border: 1px solid var(--sage-200);
+        }
+        
+        .nilai-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .nilai-icon {
+            background-color: var(--sage-500);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 24px;
+            transition: all 0.3s;
+        }
+        
+        .nilai-item:hover .nilai-icon {
+            background-color: var(--sage-600);
+            transform: scale(1.1);
+        }
+        
+        .nilai-item h4 {
+            color: var(--sage-700);
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        
+        .nilai-item p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+        
+        /* Footer (Sama dengan index.html) */
+        footer {
+            background-color: var(--sage-900);
+            color: var(--sage-100);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+            color: var(--white);
+            font-size: 20px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--sage-500);
+            border-radius: 2px;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--sage-200);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--sage-50);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.3s;
+            color: var(--sage-100);
+        }
+        
+        .social-icon:hover {
+            background-color: var(--sage-600);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: var(--sage-300);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-main .container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px;
+            }
+            
+            .page-header h1 {
+                font-size: 28px;
+            }
+            
+            .page-header p {
+                font-size: 16px;
+            }
+            
+            .profile-section h2 {
+                font-size: 28px;
+            }
+            
+            .visimisi-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .visi-card, .misi-card {
+                padding: 25px;
+            }
+            
+            .card-icon {
+                font-size: 35px;
+                padding: 12px;
+            }
+            
+            .tujuan-sasaran {
+                padding: 25px;
+            }
+            
+            .ts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nilai-grid {
+                gap: 15px;
+            }
+            
+            .nilai-item {
+                min-width: 120px;
+                padding: 15px 10px;
+            }
+            
+            .nilai-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .profile-tab {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .profile-card {
+                padding: 25px;
+            }
+            
+            .tujuan-sasaran {
+                padding: 20px;
+            }
+            
+            .nilai-item {
+                min-width: 100%;
+                max-width: 100%;
+            }
+        }
+        
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            color: var(--sage-700);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 25px;
+            border-radius: 30px;
+            background-color: var(--sage-100);
+            transition: all 0.3s;
+        }
+        
+        .back-button:hover {
+            background-color: var(--sage-300);
+            color: var(--sage-900);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                </div>
+                <div class="social-media">
+                    <span>Ikuti Kami: </span>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/kkt145_beringin?igsh=OGdxMzBqdGg1dTlm" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtu.be/3gjG8HdR-gs?si=_HHMlJ5W0syhxo0Q" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Lambang_Kabupaten_Minahasa_Tenggara.jpg">
+                    <div class="logo-text">
+                        <h1>Desa Beringin</h1>
+                        <p>Kecamatan Belang - Minahasa Tenggara</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="profil-desa.html"  class="active">Profil Desa</a></li>
+                        <li><a href="potensi_desa.html">Potensi Desa</a></li>
+                        
+                        <li><a href="galeri.html">Galeri</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="profil-desa.html">Profil Desa</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Profil Desa Beringin</h1>
+            <p>Mengenal lebih dekat visi, misi, struktur organisasi, dan sejarah Desa Beringin</p>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <h2>Profil Lengkap Desa Beringin</h2>
+            
+            <div class="profile-tabs">
+                <button class="profile-tab active" data-tab="vision-mission">
+                    <i class="fas fa-bullseye"></i> Visi & Misi
+                </button>
+                <button class="profile-tab" data-tab="organization">
+                    <i class="fas fa-sitemap"></i> Struktur Organisasi
+                </button>
+                <button class="profile-tab" data-tab="history">
+                    <i class="fas fa-history"></i> Sejarah Desa
+                </button>
+            </div>
+            
+            <!-- Visi & Misi -->
+            <div id="vision-mission" class="profile-content active">
+                <div class="profile-card">
+                    <div class="visimisi-container">
+                        <!-- Visi Card -->
+                        <div class="visi-card">
+                            <div class="card-badge">Visi</div>
+                            <div class="card-icon">
+                                <i class=></i>
+                            </div>
+                            <h3>Visi Desa Beringin</h3>
+                            <div class="visi-text">
+                                "Mewujudkan masyarakat Desa Beringin yang berkembang disegala bidang Pembangunan, Ekonomi, dan Sumber Daya"
+                            </div>
+                        </div>
+                        
+                        <!-- Misi Card -->
+                        <div class="misi-card">
+                            <div class="card-badge">Misi</div>
+                            <div class="card-icon">
+                                <i class=></i>
+                            </div>
+                            <h3>Misi Desa Beringin</h3>
+                            <ul class="misi-list">
+                                <li>Sukses Pembangunan</li>
+                                <li>Sukses Ekonomi</li>
+                                <li>Sukses Sumber Daya Manusia</li>
+                                <li>Sukses Pemerintahan</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Tujuan dan Sasaran -->
+                    <div class="tujuan-sasaran">
+                         <h3><i class="fas fa-bullseye"></i> Tujuan</h3> <!-- Perbaiki tag i -->
+            <div class="ts-grid">
+                <div class="ts-item">
+                                <ul>
+                                    <li>Meningkatkan pendapatan dan kesejahteraan masyarakat melalui peningkatan produksi pertanian</li>
+                                    <li>Memberdayakan potensi agroklimat secara optimal</li>
+                                    <li>Meningkatkan sumber daya manusia, di bidang ilmu pengetahuan dan teknologi (IPTEK)</li>
+                                    <li>Meningkatkan etos kerja</li>
+                                    <li>Mendorong kemandirian</li>
+                                    <li>Meningkatkan kondis kamtibnas</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                         </div>
+                    </div>
+                </div>
+            </div>
+                    <!-- File: profil-desa.html - bagian Struktur Organisasi -->
+<div id="organization" class="profile-content">
+    <div class="profile-card">
+        <h3 style="text-align: center; margin-bottom: 30px; color: var(--sage-800);">KELEMBAGAAN DESA (SOTK DESA)</h3>
+        
+        <div style="background-color: var(--white); border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 2px solid var(--sage-300);">
+            <!-- Struktur utama -->
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                
+                <!-- Level 1: KEPALA DESA -->
+                <div style="background: linear-gradient(135deg, var(--sage-600), var(--sage-700)); color: white; padding: 25px 40px; border-radius: 12px; text-align: center; margin-bottom: 40px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); width: 100%; max-width: 500px; border: 3px solid var(--sage-500);">
+                    <h4 style="margin-bottom: 10px; font-size: 22px; letter-spacing: 1px;">KEPALA DESA</h4>
+                    <p style="font-size: 20px; font-weight: bold; margin-bottom: 5px;">STIEN ROGAHANG</p>
+                    <p style="font-size: 14px; opacity: 0.9;">Hukum Tua</p>
+                </div>
+                
+                <!-- Garis penghubung -->
+                <div style="width: 3px; height: 40px; background-color: var(--sage-400); margin-bottom: 30px;"></div>
+                
+                <!-- Level 2: SEKRETARIS DESA -->
+                <div style="background: linear-gradient(135deg, var(--sage-500), var(--sage-600)); color: white; padding: 22px 35px; border-radius: 12px; text-align: center; margin-bottom: 40px; box-shadow: 0 6px 18px rgba(0,0,0,0.12); width: 100%; max-width: 450px; border: 2px solid var(--sage-400);">
+                    <h4 style="margin-bottom: 8px; font-size: 20px;">SEKRETARIS DESA</h4>
+                    <p style="font-size: 18px; font-weight: bold;">YATTY KAPAHANG</p>
+                    <p style="font-size: 13px; opacity: 0.9;">Plt. Sekretaris Desa</p>
+                </div>
+                
+                <!-- Garis penghubung -->
+                <div style="width: 3px; height: 40px; background-color: var(--sage-400); margin-bottom: 30px;"></div>
+                
+                <!-- Level 3: 3 KOLOM URUSAN -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 40px; width: 100%;">
+                    <!-- Urusan Umum -->
+                    <div style="background-color: var(--sage-100); padding: 25px 20px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 2px solid var(--sage-300); border-top: 5px solid var(--sage-500);">
+                        <h4 style="margin-bottom: 10px; color: var(--sage-800); font-size: 18px;">URUSAN UMUM</h4>
+                        <p style="font-size: 16px; font-weight: 600; color: var(--sage-700);">YATTY KAPAHANG</p>
+                    </div>
+                    
+                    <!-- Urusan Perencanaan -->
+                    <div style="background-color: var(--sage-100); padding: 25px 20px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 2px solid var(--sage-300); border-top: 5px solid var(--sage-500);">
+                        <h4 style="margin-bottom: 10px; color: var(--sage-800); font-size: 18px;">URUSAN PERENCANAAN</h4>
+                        <p style="font-size: 16px; font-weight: 600; color: var(--sage-700);">DEFVI LOSUNG</p>
+                    </div>
+                    
+                    <!-- Urusan Keuangan -->
+                    <div style="background-color: var(--sage-100); padding: 25px 20px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 2px solid var(--sage-300); border-top: 5px solid var(--sage-500);">
+                        <h4 style="margin-bottom: 10px; color: var(--sage-800); font-size: 18px;">URUSAN KEUANGAN</h4>
+                        <p style="font-size: 16px; font-weight: 600; color: var(--sage-700);">STEH ONSU</p>
+                    </div>
+                </div>
+                
+                <!-- Garis penghubung -->
+                <div style="width: 3px; height: 40px; background-color: var(--sage-400); margin-bottom: 30px;"></div>
+                
+                <!-- Level 4: 3 KOLOM SEKSI -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-bottom: 40px; width: 100%;">
+                    <!-- Seksi Pemerintahan -->
+                    <div style="background-color: var(--sage-100); padding: 25px 20px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 2px solid var(--sage-300); border-top: 5px solid var(--sage-400);">
+                        <h4 style="margin-bottom: 10px; color: var(--sage-800); font-size: 18px;">SEKSI PEMERINTAHAN</h4>
+                        <p style="font-size: 16px; font-weight: 600; color: var(--sage-700);">IVONE RONDONUMU</p>
+                    </div>
+                    
+                    <!-- Seksi Kesejahteraan -->
+                    <div style="background-color: var(--sage-100); padding: 25px 20px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 2px solid var(--sage-300); border-top: 5px solid var(--sage-400);">
+                        <h4 style="margin-bottom: 10px; color: var(--sage-800); font-size: 18px;">SEKSI KESEJAHTERAAN</h4>
+                        <p style="font-size: 16px; font-weight: 600; color: var(--sage-700);">FERNANDO PASUHUK</p>
+                    </div>
+                    
+                    <!-- Seksi Pelayanan -->
+                    <div style="background-color: var(--sage-100); padding: 25px 20px; border-radius: 10px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 2px solid var(--sage-300); border-top: 5px solid var(--sage-400);">
+                        <h4 style="margin-bottom: 10px; color: var(--sage-800); font-size: 18px;">SEKSI PELAYANAN</h4>
+                        <p style="font-size: 16px; font-weight: 600; color: var(--sage-700);">ALCE ONSU</p>
+                    </div>
+                </div>
+                
+                <!-- Garis penghubung -->
+                <div style="width: 3px; height: 40px; background-color: var(--sage-400); margin-bottom: 30px;"></div>
+                
+                <!-- Level 5: 2 KOLOM KEPALA JAGA -->
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; width: 100%; max-width: 600px;">
+                    <!-- Kepala Jaga 1 -->
+                    <div style="background-color: var(--sage-50); padding: 22px 18px; border-radius: 10px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 2px solid var(--sage-200);">
+                        <h4 style="margin-bottom: 8px; color: var(--sage-800); font-size: 17px;">KEPALA JAGA 1</h4>
+                        <p style="font-size: 16px; font-weight: 600; color: var(--sage-700);">MELDA RAKO</p>
+                    </div>
+                    
+                    <!-- Kepala Jaga 2 -->
+                    <div style="background-color: var(--sage-50); padding: 22px 18px; border-radius: 10px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border: 2px solid var(--sage-200);">
+                        <h4 style="margin-bottom: 8px; color: var(--sage-800); font-size: 17px;">KEPALA JAGA 2</h4>
+                        <p style="font-size: 16px; font-weight: 600; color: var(--sage-700);">YATTY KAPAHANG</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Legenda atau catatan -->
+        <div style="margin-top: 40px; padding: 25px; background-color: var(--sage-50); border-radius: 10px; border-left: 5px solid var(--sage-500);">
+            <h4 style="color: var(--sage-800); margin-bottom: 15px; font-size: 18px;"><i class="fas fa-info-circle"></i> Informasi Struktur Organisasi</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div>
+                    <p style="color: var(--text); font-size: 15px; line-height: 1.6;">
+                        <strong>SOTK Desa</strong> (Struktur Organisasi dan Tata Kerja) merupakan pedoman formal yang mengatur pembagian kerja, hubungan, dan wewenang dalam pemerintahan desa.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Responsive Design -->
+        <style>
+            @media (max-width: 992px) {
+                #organization .profile-card > div > div {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                #organization .profile-card > div > div {
+                    grid-template-columns: 1fr !important;
+                    gap: 20px !important;
+                }
+                
+                #organization .profile-card > div > div > div {
+                    max-width: 100% !important;
+                }
+                
+                #organization .profile-card {
+                    padding: 20px !important;
+                }
+            }
+        </style>
+    </div>
+</div>            
+            <!-- Sejarah Desa -->
+            <div id="history" class="profile-content">
+                <div class="profile-card">
+                    <h3 style="margin-bottom: 25px; color: var(--sage-800);">Sejarah Singkat Desa Beringin</h3>
+                    
+                    <div style="line-height: 1.8;">
+                        <p style="margin-bottom: 20px; font-size: 16px; color: var(--text);">
+                            Desa Beringin bermula pada tahun 1950 ketika Hukum Tua District Ratahan, Walanoou, memerintahkan pembukaan permukiman baru di wilayah Belang. Dipimpin oleh Julius Pasuhuk, sekelompok keluarga mulai menetap dan membuka kebun di lokasi bernama Kaanon. Pada 23 November 1952, masyarakat melakukan ritual pemasangan Pasak Wanua (Batu Dasar) yang dipimpin oleh Tonaas Rako, menandai berdirinya permukiman resmi.
+                        </p>
+                        <p>Nama desa diambil dari banyaknya pohon beringin yang tumbuh subur di wilayah permukiman awal. Pohon beringin dipilih sebagai simbol karena melambangkan kekuatan, keteduhan, dan perlindungan bagi masyarakat..</p>
+                        <div style="background-color: var(--sage-50); padding: 25px; border-radius: 10px; border-left: 5px solid var(--sage-500); margin: 25px 0;">
+                            <h4 style="color: var(--sage-800); margin-bottom: 10px;">Moto Desa</h4>
+                            <p style="color: var(--text);">
+                        "WOTOLE IKITE MUTUANSA MAMANGUN WANUA"
+                        <p>(Mari kita bersatu membangun desa)
+                        Desa Beringin terus berkembang dari permukiman kecil menjadi desa mandiri
+                        dengan semangat gotong royong yang tetap terjaga hingga sekarang.</p></p>
+                        </div>
+                        
+                        <p style="margin-bottom: 20px; font-size: 16px; color: var(--text);">
+                        </p>
+                        
+                        <div style="margin-top: 30px;">
+                            <h4 style="color: var(--sage-800); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--sage-200);">Perkembangan Desa Beringin</h4>
+                            
+                            <div style="display: flex; margin-bottom: 25px; position: relative; padding-left: 30px;">
+                     <!-- Bullet point -->
+                    <div style="position: absolute; left: 0; top: 5px; width: 15px; height: 15px; border-radius: 50%; background-color: var(--sage-500);"></div>
+    
+                     <!-- Garis vertikal -->
+                     <div style="position: absolute; left: 7px; top: 20px; width: 1px; height: calc(100% + 5px); background-color: var(--sage-300);"></div>
+    
+                     <!-- Konten -->
+                    <div>
+                    <div style="font-weight: bold; color: var(--sage-700); margin-right: 15px; min-width: 90px;">
+                        <span class="year">1950-1952</span>
+                        <span class="event">Pembentukan Permukiman Awal</span>
+                    </div>
+                    <!-- PARAGRAF DENGAN WARNA HITAM -->
+                        <p style="color: #000000; margin-top: 5px;">
+                    Masa pembentukan permukiman awal oleh 15 keluarga pertama. Mata pencaharian utama adalah berburu dan berkebun secara tradisional.
+                    </p>
+                 </div>
+                </div>
+
+                      <div style="display: flex; margin-bottom: 25px; position: relative; padding-left: 30px;">
+                     <!-- Bullet point -->
+                    <div style="position: absolute; left: 0; top: 5px; width: 15px; height: 15px; border-radius: 50%; background-color: var(--sage-500);"></div>
+    
+                     <!-- Garis vertikal -->
+                     <div style="position: absolute; left: 7px; top: 20px; width: 1px; height: calc(100% + 5px); background-color: var(--sage-300);"></div>
+    
+                     <!-- Konten -->
+                    <div>
+                    <div style="font-weight: bold; color: var(--sage-700); margin-right: 15px; min-width: 90px;">
+                        <span class="year">1953-1960</span>
+                        <span class="event">Pengembangan Pemukiman</span>
+                    </div>
+                    <!-- PARAGRAF DENGAN WARNA HITAM -->
+                        <p style="color: #000000; margin-top: 5px;">
+                    Pengaturan tata letak pemukiman, pembukaan jalan desa, dan pendirian fasilitas umum. Pada 1960, permukiman diresmikan sebagai Belang Dua dengan Arnold Pasuhuk sebagai Kepala Jaga pertama.
+                    </p>
+                 </div>
+                </div>
+
+                    
+                    <div style="display: flex; margin-bottom: 25px; position: relative; padding-left: 30px;">
+                     <!-- Bullet point -->
+                    <div style="position: absolute; left: 0; top: 5px; width: 15px; height: 15px; border-radius: 50%; background-color: var(--sage-500);"></div>
+    
+                     <!-- Garis vertikal -->
+                     <div style="position: absolute; left: 7px; top: 20px; width: 1px; height: calc(100% + 5px); background-color: var(--sage-300);"></div>
+    
+                     <!-- Konten -->
+                    <div>
+                    <div style="font-weight: bold; color: var(--sage-700); margin-right: 15px; min-width: 90px;">
+                        <span class="year">1980-1987</span>
+                        <span class="event">Transisi Menuju Desa</span>
+                    </div>
+                    <!-- PARAGRAF DENGAN WARNA HITAM -->
+                        <p style="color: #000000; margin-top: 5px;">
+                   Pengangkatan Wakil Hukum Tua (1980) dan persiapan administrasi. Pembangunan infrastruktur jalan desa dari jalan setapak menjadi jalan roda empat. Peresmian SD Negeri 3 Belang (1983) dan masa transisi kepemimpinan.
+                    </p>
+                 </div>
+                </div>
+                
+
+                     <div style="display: flex; margin-bottom: 25px; position: relative; padding-left: 30px;">
+                     <!-- Bullet point -->
+                    <div style="position: absolute; left: 0; top: 5px; width: 15px; height: 15px; border-radius: 50%; background-color: var(--sage-500);"></div>
+    
+                     <!-- Garis vertikal -->
+                     <div style="position: absolute; left: 7px; top: 20px; width: 1px; height: calc(100% + 5px); background-color: var(--sage-300);"></div>
+    
+                     <!-- Konten -->
+                    <div>
+                    <div style="font-weight: bold; color: var(--sage-700); margin-right: 15px; min-width: 90px;">
+                        <span class="year">1988</span>
+                        <span class="event">Menjadi Desa Definitif</span>
+                    </div>
+                    <!-- PARAGRAF DENGAN WARNA HITAM -->
+                        <p style="color: #000000; margin-top: 5px;">
+                   23 September 1988 - Berdasarkan SK Gubernur Sulawesi Utara, Belang Dua resmi dinaikkan statusnya menjadi Desa Definitif Beringin dengan acara peresmian di hadapan unsur Tripika Kecamatan Belang.
+                    </p>
+                 </div>
+                </div>
+
+
+                <div style="display: flex; margin-bottom: 25px; position: relative; padding-left: 30px;">
+                     <!-- Bullet point -->
+                    <div style="position: absolute; left: 0; top: 5px; width: 15px; height: 15px; border-radius: 50%; background-color: var(--sage-500);"></div>
+    
+                     <!-- Garis vertikal -->
+                     <div style="position: absolute; left: 7px; top: 20px; width: 1px; height: calc(100% + 5px); background-color: var(--sage-300);"></div>
+    
+                     <!-- Konten -->
+                    <div>
+                    <div style="font-weight: bold; color: var(--sage-700); margin-right: 15px; min-width: 90px;">
+                        <span class="year">1989-2012</span>
+                        <span class="event">Konsolidasi Pemerintahan Desa</span>
+                    </div>
+                    <!-- PARAGRAF DENGAN WARNA HITAM -->
+                        <p style="color: #000000; margin-top: 5px;">
+                   Pemilihan Hukum Tua definitif pertama (Jakop Peri Pasuhuk, 1989) dan periode kepemimpinan berikutnya. Transformasi sistem pemerintahan desa modern dengan pembentukan perangkat desa lengkap.
+                    </p>
+                 </div>
+                </div>
+                
+
+                <div style="display: flex; margin-bottom: 25px; position: relative; padding-left: 30px;">
+                     <!-- Bullet point -->
+                    <div style="position: absolute; left: 0; top: 5px; width: 15px; height: 15px; border-radius: 50%; background-color: var(--sage-500);"></div>
+    
+                     <!-- Garis vertikal -->
+                     <div style="position: absolute; left: 7px; top: 20px; width: 1px; height: calc(100% + 5px); background-color: var(--sage-300);"></div>
+    
+                     <!-- Konten -->
+                    <div>
+                    <div style="font-weight: bold; color: var(--sage-700); margin-right: 15px; min-width: 90px;">
+                        <span class="year">2012-Sekarang</span>
+                        <span class="event">Modernisasi dan Pemberdayaan</span>
+                    </div>
+                    <!-- PARAGRAF DENGAN WARNA HITAM -->
+                        <p style="color: #000000; margin-top: 5px;">
+                   Pemilihan Hukum Tua perempuan pertama (Stien Rogahang, 2012). Transformasi menjadi desa mandiri dengan program pemberdayaan masyarakat, pengembangan UMKM, pelestarian budaya lokal, dan peningkatan pelayanan publik berbasis teknologi.
+                 </div>
+                </div>
+                        <div>
+                        <div>                      
+                        <p style="margin-top: 30px; font-size: 16px; color: var(--text);">
+                            Kini, Desa Beringin terus berupaya untuk menjadi desa yang mandiri dan sejahtera dengan tetap mempertahankan nilai-nilai gotong royong dan kearifan lokal yang telah diwariskan oleh para pendahulu, sekaligus mengadaptasi perkembangan zaman untuk kemajuan bersama.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Back to Home Button -->
+            <div style="text-align: center; margin: 50px 0 30px;">
+                <a href="index.html" class="back-button">
+                    <i class="fas fa-home"></i> Kembali ke Beranda
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Desa Beringin</h3>
+                    <p>Desa mandiri dan sejahtera dengan mengedepankan nilai-nilai gotong royong dan kearifan lokal.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/kkt145_beringin?igsh=OGdxMzBqdGg1dTlm" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtu.be/3gjG8HdR-gs?si=_HHMlJ5W0syhxo0Q" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/qr/SGDWAM5EL74LE1" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Menu Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="profil-desa.html">Profil Desa</a></li>
+                        <li><a href="#">Pemerintahan</a></li>
+                        <li><a href="agenda-desa.html">Agenda Desa</a></li>
+                        <li><a href="data-desa.html">Data Desa</a></li>
+                        <li><a href="#">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Profil Desa</h3>
+                    <ul class="footer-links">
+                        <li><a href="profil-desa.html#vision-mission">Visi & Misi</a></li>
+                        <li><a href="profil-desa.html#organization">Struktur Organisasi</a></li>
+                        <li><a href="profil-desa.html#history">Sejarah Desa</a></li>
+                        <li><a href="#">Letak Geografis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak Darurat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Polisi: 110</a></li>
+                        <li><a href="#">Ambulan: 118/119</a></li>
+                        <li><a href="https://wa.me/qr/SGDWAM5EL74LE1" target="_blank">WhatsApp Desa</a></li>
+                        <li><a href="#">Poskesdes: 085341961076</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Desa Beringin. Hak Cipta Dilindungi.</p>
+                <p style="margin-top: 5px; font-size: 12px;">Website resmi pemerintah Desa Beringin, Kecamatan Belang, Kabupaten Minahasa Tenggara</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab Switching Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.profile-tab');
+            const tabContents = document.querySelectorAll('.profile-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Show corresponding tab content
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Check URL hash for direct tab access
+            const hash = window.location.hash.substring(1);
+            if (hash && ['vision-mission', 'organization', 'history'].includes(hash)) {
+                const button = document.querySelector(`.profile-tab[data-tab="${hash}"]`);
+                if (button) {
+                    button.click();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

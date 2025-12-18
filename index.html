@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desa Beringin</title>
+    <meta name="description" content="Website Resmi Desa Beringin, Kecamatan Belang, Kabupaten Minahasa Tenggara">
+    <meta name="keywords" content="Desa Beringin, Minahasa Tenggara, Data Desa, Pemerintahan Desa">
+    <meta name="author" content="Desa Beringin">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --sage-50: #F8FBF8;
+            --sage-100: #EFF7ED;
+            --sage-200: #DDEBD9;
+            --sage-300: #C4D9BD;
+            --sage-400: #A3C195;
+            --sage-500: #87A87C;
+            --sage-600: #678B5D;
+            --sage-700: #52704A;
+            --sage-800: #425A3C;
+            --sage-900: #384C33;
+            --accent: #A8C3A2;
+            --light: #f8fbf8;
+            --dark: #2C3E2A;
+            --text: #333333;
+            --text-light: #5A6D57;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--sage-50);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-top {
+            background-color: var(--sage-800);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 14px;
+        }
+        
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .header-top a {
+            color: var(--sage-200);
+            margin-left: 15px;
+            transition: color 0.3s;
+        }
+        
+        .header-top a:hover {
+            color: var(--white);
+        }
+        
+        .header-main {
+            padding: 15px 0;
+        }
+        
+        .header-main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 70px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            font-size: 24px;
+            color: var(--sage-800);
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        
+        nav ul li a:hover, 
+        nav ul li a.active {
+            background-color: var(--sage-500);
+            color: var(--white);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(56, 76, 51, 0.7), rgba(56, 76, 51, 0.7)), url('') no-repeat center center/cover;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--sage-100);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--sage-600);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .btn:hover {
+            background-color: var(--sage-700);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--sage-500);
+            color: var(--sage-500);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--sage-500);
+            color: var(--white);
+        }
+        
+        /* Quick Access */
+        .quick-access {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+        
+        .quick-access h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--sage-800);
+            position: relative;
+        }
+        
+        .quick-access h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--sage-500);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .quick-access-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .quick-access-grid a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .access-item {
+            background-color: var(--sage-50);
+            padding: 30px 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border: 1px solid var(--sage-200);
+            cursor: pointer;
+            display: block;
+        }
+        
+        .access-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+            border-color: var(--sage-400);
+        }
+        
+        .access-item i {
+            font-size: 42px;
+            color: var(--sage-600);
+            margin-bottom: 20px;
+        }
+        
+        .access-item h3 {
+            margin-bottom: 15px;
+            color: var(--sage-800);
+            font-size: 20px;
+        }
+        
+        .access-item p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--sage-100);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            color: var(--sage-800);
+            margin-bottom: 20px;
+            position: relative;
+            font-size: 32px;
+        }
+        
+        .about-text h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--sage-500);
+            margin-top: 15px;
+            border-radius: 2px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            font-size: 16px;
+        }
+        
+        .about-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border: 8px solid var(--white);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .services h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--sage-800);
+            position: relative;
+            font-size: 32px;
+        }
+        
+        .services h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--sage-500);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--sage-50);
+            padding: 35px 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border: 1px solid var(--sage-200);
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: var(--sage-400);
+        }
+        
+        .service-card i {
+            font-size: 48px;
+            color: var(--sage-600);
+            margin-bottom: 25px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--sage-800);
+            font-size: 22px;
+        }
+        
+        .service-card p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+        
+        /* Demographics */
+        .demographics {
+            padding: 80px 0;
+            background: linear-gradient(rgba(66, 90, 60, 0.85), rgba(66, 90, 60, 0.85)), url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .demographics h2 {
+            margin-bottom: 50px;
+            font-size: 32px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-item {
+            padding: 25px 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--sage-200);
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            color: var(--sage-100);
+        }
+        
+        /* Location/Map Section */
+        .location {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .location h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--sage-800);
+            position: relative;
+            font-size: 32px;
+        }
+        
+        .location h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--sage-500);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .location-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .location-info h3 {
+            margin-bottom: 25px;
+            color: var(--sage-800);
+            font-size: 24px;
+        }
+        
+        .location-details {
+            margin-bottom: 30px;
+        }
+        
+        .location-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: var(--sage-50);
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .location-icon {
+            color: var(--sage-600);
+            margin-right: 15px;
+            font-size: 20px;
+            width: 24px;
+            text-align: center;
+        }
+        
+        .map-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 3px solid var(--sage-300);
+            height: 400px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .location-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--sage-100);
+        }
+        
+        .contact h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--sage-800);
+            position: relative;
+            font-size: 32px;
+        }
+        
+        .contact h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--sage-500);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 25px;
+            color: var(--sage-800);
+            font-size: 24px;
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .contact-icon {
+            color: var(--sage-600);
+            margin-right: 15px;
+            font-size: 20px;
+            width: 24px;
+            text-align: center;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid var(--sage-300);
+            border-radius: 8px;
+            font-family: inherit;
+            background-color: var(--white);
+            transition: border-color 0.3s;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--sage-500);
+            box-shadow: 0 0 0 3px rgba(135, 168, 124, 0.2);
+        }
+        
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* WhatsApp QR Section */
+        .whatsapp-qr {
+            text-align: center;
+            padding: 40px 30px;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 2px solid var(--sage-200);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .whatsapp-qr h3 {
+            color: var(--sage-800);
+            margin-bottom: 25px;
+            font-size: 24px;
+            text-align: center;
+        }
+        
+        .whatsapp-qr p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+        
+        .qr-container {
+            background-color: var(--sage-50);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+            display: inline-block;
+            border: 2px solid var(--sage-300);
+        }
+        
+        .qr-container img {
+            width: 250px;
+            height: 250px;
+            display: block;
+        }
+        
+        .whatsapp-direct {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--sage-900);
+            color: var(--sage-100);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+            color: var(--white);
+            font-size: 20px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--sage-500);
+            border-radius: 2px;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--sage-200);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--sage-50);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.3s;
+            color: var(--sage-100);
+        }
+        
+        .social-icon:hover {
+            background-color: var(--sage-600);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: var(--sage-300);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-container,
+            .location-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-main .container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px;
+            }
+            
+            .hero h2 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .quick-access-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+            
+            .whatsapp-qr {
+                padding: 30px 20px;
+            }
+            
+            .qr-container img {
+                width: 200px;
+                height: 200px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .qr-container img {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .whatsapp-btn {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                </div>
+                <div class="social-media">
+                    <span>Ikuti Kami: </span>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/kkt145_beringin?igsh=OGdxMzBqdGg1dTlm" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtu.be/3gjG8HdR-gs?si=_HHMlJ5W0syhxo0Q" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <!-- Logo yang telah Anda berikan -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Lambang_Kabupaten_Minahasa_Tenggara.jpg">
+                    <div class="logo-text">
+                        <h1>Desa Beringin</h1>
+                        <p>Kecamatan Belang - Minahasa Tenggara</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="active">Beranda</a></li>
+                        <li><a href="profil-desa.html">Profil Desa</a></li>
+                        <li><a href="potensi_desa.html">Potensi Desa</a></li>
+
+                        <li><a href="galeri.html" >Galeri</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Selamat Datang di Website Resmi Desa Beringin</h2>
+            <p>Desa yang mandiri dan sejahtera dengan mengedepankan nilai-nilai gotong royong.</p>
+            <a href="profil-desa.html" class="btn">Pelajari Lebih Lanjut</a>
+        </div>
+    </section>
+
+    <!-- Quick Access Section -->
+    <section class="quick-access">
+        <div class="container">
+            <h2>Jelajahi Desa</h2>
+            <div class="quick-access-grid">
+                <a href="data-desa.html" target="_blank" class="access-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Data Desa</h3>
+                    <p>Statistik dan data kependudukan Desa Beringin</p>
+                </a>
+                <a href="agenda-desa.html" target="_blank" class="access-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Agenda Desa</h3>
+                    <p>Jadwal kegiatan dan event di Desa Beringin</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Profil Desa Beringin</h2>
+                    <p>Desa Beringin merupakan..., memiliki luas wilayah pemukiman ± 10 ha dan luas perkebunan ± 1200 ha dengan jumlah penduduk 440 jiwa.</p>
+                    <p>Desa ini dikenal dengan potensi pertanian yang menjadi sumber penghasilan utama masyarakat. Dengan semangat gotong royong yang masih kental, Desa Beringin terus berupaya meningkatkan kesejahteraan warganya.</p>
+                    <a href="profil-desa.html" class="btn">Baca Selengkapnya</a>
+                </div>
+                <div class="about-image">
+                    <img src="beranda.png">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2>Layanan Desa</h2>
+            <div class="services-grid">
+
+                <div class="service-card">
+                    <i class="fas fa-hands-helping"></i>
+                   <a href="kegiatan.html"><h3>Kegiatan Masyarakat</h3></a> 
+                    <p>Program dan kegiatan untuk pengembangan komunitas dan pemberdayaan warga.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <a href="Pendidikan.html"><h3>Pendidikan</h3></a>
+                    <p>Program PAUD, keaksaraan, dan pelatihan keterampilan untuk masyarakat.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-clinic-medical"></i>
+                    <a href="kesehatan.html">
+                    <h3>Kesehatan Masyarakat</h3></a>
+                    <p>Pelayanan posyandu, KB, dan program kesehatan untuk warga desa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location">
+        <div class="container">
+            <h2>Lokasi Desa Beringin</h2>
+            <div class="location-container">
+                <div class="location-info">
+                    <h3>Informasi Geografis</h3>
+                    <div class="location-details">
+                        <div class="location-item">
+                            <div class="location-icon"><i class="fas fa-globe-asia"></i></div>
+                            <div>
+                                <h4>Koordinat GPS</h4>
+                                <p>1°08'45.6"N 124°48'36.0"E</p>
+                                <small>Latitude: 1.146000° Longitude: 124.810000°</small>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div class="location-icon"><i class="fas fa-map-marked-alt"></i></div>
+                            <div>
+                                <h4>Batas Wilayah</h4>
+                                <p><strong>Utara:</strong> Sungai Wowesen </p>
+                                <p><strong>Selatan:</strong> Perkebunan Desa Buku, Buku Tengah, Buku Selatan Kecamatan Belang</p>
+                                <p><strong>Timur:</strong> Perkebunan Desa Belang, Desa Borgo, Desa Mangkit Kecamatan Belang & Perkebunan Desa Basaan Kecamatan Ratatotok</p>
+                                <p><strong>Barat:</strong> Perkebunan Desa Morea Kecamatan Ratatotok, Perkebunan Desa Tonsawang Kecamatan Tombatu</p>
+                            </div>
+                        </div>
+                        <div class="location-item">
+                            <div class="location-icon"><i class="fas fa-mountain"></i></div>
+                            <div>
+                                <h4>Kondisi Geografis</h4>
+                                <p><strong>Ketinggian:</strong> 200-500 mdpl</p>
+                                <p><strong>Topografi:</strong> Berbukit dan Lereng</p>
+                                <p><strong>Iklim:</strong> Tropis dengan curah hujan sedang</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <a href="https://maps.app.goo.gl/K2dMaCjRsGS3gGHt9" target="_blank" class="btn">
+                            <i class="fas fa-map-marker-alt"></i> Buka di Google Maps
+                        </a>
+                        <a href="https://earth.google.com/web/@1.146000,124.810000,200a,10000d,35y,0h,0t,0r" target="_blank" class="btn btn-outline">
+                            <i class="fas fa-globe"></i> Lihat di Google Earth
+                        </a>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.177749524976!2d124.79542694999999!3d1.146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x328756e0e71ba111%3A0x8b8c5c5a6c5a5c5a!2sMinahasa%20Tenggara%2C%20Sulawesi%20Utara!5e0!3m2!1sid!2sid!4v1712345678901!5m2!1sid!2sid" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2>Hubungi Kami</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Kantor Desa Beringin</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <p>Jl. P3DT</p>
+                                <p>Desa Beringin, Kec. Belang</p>
+                                <p>Kabupaten Minahasa Tenggara</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <p>085397082429</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <p>info@desaberinginbelang2.desa.id</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <p>Senin - Jumat: 08.00 - 16.00 WITA</p>
+                                <p>Sabtu: 08.00 - 14.00 WITA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Desa Beringin</h3>
+                    <p>Desa mandiri dan sejahtera dengan mengedepankan nilai-nilai gotong royong dan kearifan lokal.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/kkt145_beringin?igsh=OGdxMzBqdGg1dTlm" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtu.be/3gjG8HdR-gs?si=_HHMlJ5W0syhxo0Q" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/qr/SGDWAM5EL74LE1" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Menu Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="profil-desa.html">Profil Desa</a></li>
+                    
+                        <li><a href="potensi_desa.html">Potensi Desa</a></li>
+                        <li><a href="galeri.html">Galeri</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Layanan Publik</h3>
+                    <ul class="footer-links">
+
+                        <li><a href="kegiatan.html ">Kegiatan Masyarakat</a></li>
+                        <li><a href="Pendidikan.html">Pendidikan</a></li>
+                        <li><a href="kesehatan.html">Kesehatan Masyarakat</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak Darurat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Polisi: 110</a></li>
+                        <li><a href="#">Ambulance: 118/119</a></li>
+                        <li><a href="https://wa.me/qr/SGDWAM5EL74LE1" target="_blank">WhatsApp Desa</a></li>
+                        <li><a href="#">Poskesdes: 085341961076</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Desa Beringin. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kesehatan Masyarakat - Desa Beringin</title>
+    <meta name="description" content="Layanan Kesehatan Masyarakat Desa Beringin: Posyandu, KB, Kesehatan Ibu dan Anak, Remaja, Lansia">
+    <meta name="keywords" content="Posyandu, Kesehatan Ibu Hamil, Kesehatan Balita, Kesehatan Remaja, Kesehatan Lansia, Desa Beringin">
+    <meta name="author" content="Desa Beringin">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --sage-50: #F8FBF8;
+            --sage-100: #EFF7ED;
+            --sage-200: #DDEBD9;
+            --sage-300: #C4D9BD;
+            --sage-400: #A3C195;
+            --sage-500: #87A87C;
+            --sage-600: #678B5D;
+            --sage-700: #52704A;
+            --sage-800: #425A3C;
+            --sage-900: #384C33;
+            --accent: #A8C3A2;
+            --light: #f8fbf8;
+            --dark: #2C3E2A;
+            --text: #333333;
+            --text-light: #5A6D57;
+            --white: #ffffff;
+            --health-red: #e63946;
+            --health-blue: #457b9d;
+            --health-green: #2a9d8f;
+            --health-yellow: #e9c46a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--sage-50);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-top {
+            background-color: var(--sage-800);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 14px;
+        }
+        
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .header-top a {
+            color: var(--sage-200);
+            margin-left: 15px;
+            transition: color 0.3s;
+        }
+        
+        .header-top a:hover {
+            color: var(--white);
+        }
+        
+        .header-main {
+            padding: 15px 0;
+        }
+        
+        .header-main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 70px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            font-size: 24px;
+            color: var(--sage-800);
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        
+        nav ul li a:hover, 
+        nav ul li a.active {
+            background-color: var(--sage-500);
+            color: var(--white);
+        }
+        
+        /* Page Hero */
+        .page-hero {
+            background: linear-gradient(rgba(70, 123, 157, 0.85), rgba(70, 123, 157, 0.85)), url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .page-hero h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .page-hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--sage-100);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--health-blue);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .btn:hover {
+            background-color: #355070;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+        
+        /* Health Services Section */
+        .health-services {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--sage-800);
+            position: relative;
+            font-size: 32px;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--health-blue);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        .section-description {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            color: var(--text-light);
+            font-size: 17px;
+            line-height: 1.8;
+        }
+        
+        /* Posyandu Categories */
+        .posyandu-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .posyandu-card {
+            background-color: var(--sage-50);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--sage-200);
+        }
+        
+        .posyandu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .posyandu-header {
+            padding: 25px;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .posyandu-ibu-hamil .posyandu-header {
+            background-color: var(--health-red);
+        }
+        
+        .posyandu-balita .posyandu-header {
+            background-color: var(--health-green);
+        }
+        
+        .posyandu-remaja .posyandu-header {
+            background-color: var(--health-blue);
+        }
+        
+        .posyandu-lansia .posyandu-header {
+            background-color: var(--health-yellow);
+            color: var(--dark);
+        }
+        
+        .posyandu-header i {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .posyandu-header h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        
+        .posyandu-body {
+            padding: 30px;
+        }
+        
+        .posyandu-body p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+        
+        .posyandu-list {
+            list-style: none;
+        }
+        
+        .posyandu-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--text-light);
+        }
+        
+        .posyandu-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        
+        .posyandu-ibu-hamil .posyandu-list li:before {
+            color: var(--health-red);
+        }
+        
+        .posyandu-balita .posyandu-list li:before {
+            color: var(--health-green);
+        }
+        
+        .posyandu-remaja .posyandu-list li:before {
+            color: var(--health-blue);
+        }
+        
+        .posyandu-lansia .posyandu-list li:before {
+            color: var(--health-yellow);
+        }
+        
+        /* Jadwal Posyandu */
+        .jadwal-section {
+            background-color: var(--sage-100);
+            padding: 80px 0;
+        }
+        
+        .jadwal-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .jadwal-table {
+            width: 100%;
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-collapse: collapse;
+        }
+        
+        .jadwal-table thead {
+            background-color: var(--health-blue);
+            color: var(--white);
+        }
+        
+        .jadwal-table th {
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .jadwal-table tbody tr {
+            border-bottom: 1px solid var(--sage-200);
+            transition: background-color 0.3s;
+        }
+        
+        .jadwal-table tbody tr:hover {
+            background-color: var(--sage-50);
+        }
+        
+        .jadwal-table td {
+            padding: 20px;
+            color: var(--text-light);
+        }
+        
+        .jadwal-table .kategori {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--white);
+        }
+        
+        .kategori-ibu-hamil {
+            background-color: var(--health-red);
+        }
+        
+        .kategori-balita {
+            background-color: var(--health-green);
+        }
+        
+        .kategori-remaja {
+            background-color: var(--health-blue);
+        }
+        
+        .kategori-lansia {
+            background-color: var(--health-yellow);
+            color: var(--dark);
+        }
+        
+        /* Kader Posyandu */
+        .kader-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+        
+        .kader-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .kader-card {
+            background-color: var(--sage-50);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border: 1px solid var(--sage-200);
+        }
+        
+        .kader-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: var(--sage-400);
+        }
+        
+        .kader-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--health-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--white);
+            font-size: 32px;
+        }
+        
+        .kader-card h4 {
+            font-size: 20px;
+            color: var(--sage-800);
+            margin-bottom: 10px;
+        }
+        
+        .kader-card p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+        
+        .kader-phone {
+            color: var(--health-blue);
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        /* Location & Contact */
+        .health-contact {
+            background-color: var(--sage-100);
+            padding: 80px 0;
+        }
+        
+        .health-contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .health-info h3 {
+            color: var(--sage-800);
+            margin-bottom: 25px;
+            font-size: 28px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .health-info h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--health-blue);
+            border-radius: 2px;
+        }
+        
+        .health-info p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .health-list {
+            list-style: none;
+            margin-top: 25px;
+        }
+        
+        .health-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .health-list i {
+            color: var(--health-blue);
+            margin-right: 15px;
+            font-size: 18px;
+        }
+        
+        .health-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border: 8px solid var(--white);
+        }
+        
+        .health-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* CTA Section */
+        .health-cta {
+            background: linear-gradient(rgba(70, 123, 157, 0.9), rgba(70, 123, 157, 0.9)), url('https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .health-cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .health-cta p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--sage-100);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--health-blue);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--sage-900);
+            color: var(--sage-100);
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+            color: var(--white);
+            font-size: 20px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--health-blue);
+            border-radius: 2px;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--sage-200);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--sage-50);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.3s;
+            color: var(--sage-100);
+        }
+        
+        .social-icon:hover {
+            background-color: var(--health-blue);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: var(--sage-300);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .health-contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-main .container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px;
+            }
+            
+            .page-hero h2 {
+                font-size: 32px;
+            }
+            
+            .page-hero p {
+                font-size: 16px;
+            }
+            
+            .posyandu-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .jadwal-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .kader-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .health-cta h2 {
+                font-size: 28px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .jadwal-table th,
+            .jadwal-table td {
+                padding: 12px 8px;
+                font-size: 14px;
+            }
+            
+            .kader-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                </div>
+                <div class="social-media">
+                    <span>Ikuti Kami: </span>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/kkt145_beringin?igsh=OGdxMzBqdGg1dTlm" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtu.be/3gjG8HdR-gs?si=_HHMlJ5W0syhxo0Q" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Lambang_Kabupaten_Minahasa_Tenggara.jpg">
+                    <div class="logo-text">
+                        <h1>Desa Beringin</h1>
+                        <p>Kecamatan Belang - Minahasa Tenggara</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="profil-desa.html">Profil Desa</a></li>
+                        <li><a href="potensi_desa.html">Potensi Desa</a></li>
+                        
+                        <li><a href="galeri.html">Galeri</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h2>Kesehatan Masyarakat Desa Beringin</h2>
+            <p>Melayani dengan hati untuk kesehatan ibu hamil, balita, remaja, dan lansia melalui program Posyandu terpadu</p>
+        </div>
+    </section>
+
+    <!-- Health Services Section -->
+    <section class="health-services">
+        <div class="container">
+            <h2 class="section-title">Layanan Posyandu Terpadu</h2>
+            <p class="section-description">
+                Posyandu Desa Beringin menyediakan layanan kesehatan komprehensif untuk seluruh kelompok usia. 
+                Dengan kader terlatih dan dukungan dari puskesmas, kami berkomitmen meningkatkan derajat kesehatan masyarakat.
+            </p>
+            
+            <!-- Posyandu Categories -->
+            <div class="posyandu-categories">
+                <!-- Ibu Hamil -->
+                <div class="posyandu-card posyandu-ibu-hamil">
+                    <div class="posyandu-header">
+                        <i class="fas fa-female"></i>
+                        <h3>Posyandu Ibu Hamil</h3>
+                        <p>Pendampingan Kesehatan Kehamilan</p>
+                    </div>
+                    <div class="posyandu-body">
+                        <p>Layanan khusus untuk ibu hamil dengan pemeriksaan rutin dan edukasi kesehatan kehamilan.</p>
+                        <ul class="posyandu-list">
+                            <li>Pemeriksaan tekanan darah dan berat badan</li>
+                            <li>Pemberian tablet tambah darah (Fe)</li>
+                            <li>Imunisasi TT untuk ibu hamil</li>
+                            <li>Konseling gizi dan pola makan</li>
+                            <li>Persiapan persalinan dan perawatan bayi</li>
+                            <li>Pemeriksaan USG (bekerja sama dengan puskesmas)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Balita -->
+                <div class="posyandu-card posyandu-balita">
+                    <div class="posyandu-header">
+                        <i class="fas fa-baby"></i>
+                        <h3>Posyandu Balita</h3>
+                        <p>Pemantauan Tumbuh Kembang Anak</p>
+                    </div>
+                    <div class="posyandu-body">
+                        <p>Pemantauan rutin tumbuh kembang balita dengan pencatatan di KMS (Kartu Menuju Sehat).</p>
+                        <ul class="posyandu-list">
+                            <li>Penimbangan berat badan dan pengukuran tinggi badan</li>
+                            <li>Pemantauan status gizi dengan grafik KMS</li>
+                            <li>Imunisasi dasar lengkap</li>
+                            <li>Pemberian vitamin A dan suplementasi gizi</li>
+                            <li>Deteksi dini gangguan tumbuh kembang</li>
+                            <li>Edukasi pola asuh dan stimulasi dini</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Remaja -->
+                <div class="posyandu-card posyandu-remaja">
+                    <div class="posyandu-header">
+                        <i class="fas fa-user-graduate"></i>
+                        <h3>Posyandu Remaja</h3>
+                        <p>Pendidikan Kesehatan Reproduksi</p>
+                    </div>
+                    <div class="posyandu-body">
+                        <p>Program khusus untuk remaja dengan fokus pada kesehatan reproduksi dan pencegahan masalah remaja.</p>
+                        <ul class="posyandu-list">
+                            <li>Konseling kesehatan reproduksi remaja</li>
+                            <li>Pendidikan pencegahan anemia pada remaja putri</li>
+                            <li>Edukasi bahaya narkoba dan rokok</li>
+                            <li>Pelatihan keterampilan hidup (life skills)</li>
+                            <li>Kegiatan olahraga dan seni untuk remaja</li>
+                            <li>Pemeriksaan kesehatan berkala</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Lansia -->
+                <div class="posyandu-card posyandu-lansia">
+                    <div class="posyandu-header">
+                        <i class="fas fa-user-friends"></i>
+                        <h3>Posyandu Lansia</h3>
+                        <p>Perawatan Kesehatan Usia Lanjut</p>
+                    </div>
+                    <div class="posyandu-body">
+                        <p>Layanan kesehatan komprehensif untuk lansia dengan pendekatan holistik.</p>
+                        <ul class="posyandu-list">
+                            <li>Pemeriksaan kesehatan rutin (tekanan darah, gula darah)</li>
+                            <li>Deteksi dini penyakit degeneratif</li>
+                            <li>Senam lansia dan aktivitas fisik ringan</li>
+                            <li>Konseling gizi khusus lansia</li>
+                            <li>Pemeriksaan kesehatan mental dan depresi</li>
+                            <li>Kegiatan sosial dan rekreasi untuk lansia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Desa Beringin</h3>
+                    <p>Desa mandiri dan sejahtera dengan mengedepankan nilai-nilai gotong royong dan kearifan lokal.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/kkt145_beringin?igsh=OGdxMzBqdGg1dTlm" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtu.be/3gjG8HdR-gs?si=_HHMlJ5W0syhxo0Q" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/qr/SGDWAM5EL74LE1" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Menu Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="profil-desa.html">Profil Desa</a></li>
+                        <li><a href="potensi_desa.html">Potensi Desa</a></li>
+                        <li><a href="kesehatan-masyarakat.html">Kesehatan Masyarakat</a></li>
+                        <li><a href="galeri.html">Galeri</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Layanan Kesehatan</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Posyandu Ibu Hamil</a></li>
+                        <li><a href="#">Posyandu Balita</a></li>
+                        <li><a href="#">Posyandu Remaja</a></li>
+                        <li><a href="#">Posyandu Lansia</a></li>
+                        <li><a href="#">KB & Keluarga Berencana</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak Darurat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Polisi: 110</a></li>
+                        <li><a href="#">Ambulance: 118/119</a></li>
+                        <li><a href="https://wa.me/qr/SGDWAM5EL74LE1" target="_blank">WhatsApp Desa</a></li>
+                        <li><a href="#">Poskesdes: 085341961076</a></li>
+                        <li><a href="#">Puskesmas Belang: 0431-XXXXX</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Desa Beringin. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Desa - Desa Beringin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --sage-50: #F8FBF8;
+            --sage-100: #EFF7ED;
+            --sage-200: #DDEBD9;
+            --sage-300: #C4D9BD;
+            --sage-400: #A3C195;
+            --sage-500: #87A87C;
+            --sage-600: #678B5D;
+            --sage-700: #52704A;
+            --sage-800: #425A3C;
+            --sage-900: #384C33;
+            --accent: #A8C3A2;
+            --light: #f8fbf8;
+            --dark: #2C3E2A;
+            --text: #333333;
+            --text-light: #5A6D57;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--sage-50);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-top {
+            background-color: var(--sage-800);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 14px;
+        }
+        
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .header-top a {
+            color: var(--sage-200);
+            margin-left: 15px;
+            transition: color 0.3s;
+        }
+        
+        .header-top a:hover {
+            color: var(--white);
+        }
+        
+        .header-main {
+            padding: 15px 0;
+        }
+        
+        .header-main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 70px;
+            margin-right: 15px;
+        }
+        
+        .logo-text h1 {
+            font-size: 24px;
+            color: var(--sage-800);
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        
+        nav ul li a:hover, 
+        nav ul li a.active {
+            background-color: var(--sage-500);
+            color: var(--white);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(rgba(66, 90, 60, 0.85), rgba(66, 90, 60, 0.85)), url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: var(--white);
+            padding: 80px 0 40px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .page-header h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .page-header p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--sage-100);
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 15px 0;
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .breadcrumb ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        .breadcrumb li {
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb li:after {
+            content: '/';
+            margin-left: 10px;
+            color: var(--sage-400);
+        }
+        
+        .breadcrumb li:last-child:after {
+            content: '';
+        }
+        
+        .breadcrumb a {
+            color: var(--sage-600);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .breadcrumb li:last-child a {
+            color: var(--sage-800);
+            font-weight: 600;
+        }
+        
+        /* Agenda Tabs */
+        .agenda-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .agenda-tab {
+            padding: 18px 35px;
+            background-color: var(--white);
+            border: none;
+            border-radius: 30px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-left: 6px solid;
+            min-width: 250px;
+            justify-content: center;
+        }
+        
+        .agenda-tab:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+        
+        .agenda-tab.active {
+            color: var(--white);
+        }
+        
+        .agenda-tab.past {
+            border-left-color: #4CAF50;
+        }
+        
+        .agenda-tab.past.active {
+            background-color: #4CAF50;
+        }
+        
+        .agenda-tab.present {
+            border-left-color: #FF9800;
+        }
+        
+        .agenda-tab.present.active {
+            background-color: #FF9800;
+        }
+        
+        .agenda-tab.future {
+            border-left-color: #2196F3;
+        }
+        
+        .agenda-tab.future.active {
+            background-color: #2196F3;
+        }
+        
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Activity Section */
+        .activity-section {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border: 1px solid var(--sage-200);
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--sage-200);
+        }
+        
+        .section-header h2 {
+            color: var(--sage-800);
+            font-size: 28px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -17px;
+            width: 60px;
+            height: 3px;
+            background-color: var(--sage-500);
+            border-radius: 2px;
+        }
+        
+        /* Activity Grid */
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .activity-card {
+            background-color: var(--sage-50);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border-top: 5px solid;
+        }
+        
+        .activity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .activity-card.past {
+            border-top-color: #4CAF50;
+        }
+        
+        .activity-card.present {
+            border-top-color: #FF9800;
+        }
+        
+        .activity-card.future {
+            border-top-color: #2196F3;
+        }
+        
+        .activity-media {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .activity-media img, .activity-media video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .activity-card:hover .activity-media img,
+        .activity-card:hover .activity-media video {
+            transform: scale(1.05);
+        }
+        
+        .media-type {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .activity-content {
+            padding: 25px;
+        }
+        
+        .activity-date {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+        
+        .activity-date .date-badge {
+            background-color: var(--sage-200);
+            color: var(--sage-800);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-weight: 600;
+        }
+        
+        .activity-title {
+            color: var(--sage-800);
+            margin-bottom: 15px;
+            font-size: 20px;
+            line-height: 1.4;
+        }
+        
+        .activity-description {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        .activity-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid var(--sage-200);
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        .activity-participants {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+        
+        .status-completed {
+            background-color: #E8F5E9;
+            color: #4CAF50;
+        }
+        
+        .status-ongoing {
+            background-color: #FFF3E0;
+            color: #FF9800;
+        }
+        
+        .status-upcoming {
+            background-color: #E3F2FD;
+            color: #2196F3;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            margin-top: 50px;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 200px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--sage-900);
+            color: var(--sage-100);
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+            color: var(--white);
+            font-size: 20px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--sage-500);
+            border-radius: 2px;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--sage-200);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a:hover {
+            color: var(--sage-50);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.3s;
+            color: var(--sage-100);
+        }
+        
+        .social-icon:hover {
+            background-color: var(--sage-600);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: var(--sage-300);
+        }
+        
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            color: var(--sage-700);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 12px 25px;
+            border-radius: 30px;
+            background-color: var(--sage-100);
+            transition: all 0.3s;
+        }
+        
+        .back-button:hover {
+            background-color: var(--sage-300);
+            color: var(--sage-900);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .section-header h2 {
+                margin-bottom: 15px;
+            }
+            
+            .activity-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-main .container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px;
+            }
+            
+            .activity-section {
+                padding: 25px;
+            }
+            
+            .page-header h1 {
+                font-size: 28px;
+            }
+            
+            .page-header p {
+                font-size: 16px;
+            }
+            
+            .agenda-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .agenda-tab {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .activity-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .section-header h2 {
+                font-size: 24px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> (+62) 853419961076</span>
+                </div>
+                <div class="social-media">
+                    <span>Ikuti Kami: </span>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/kkt145_beringin?igsh=OGdxMzBqdGg1dTlm" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtu.be/3gjG8HdR-gs?si=_HHMlJ5W0syhxo0Q" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Lambang_Kabupaten_Minahasa_Tenggara.jpg" alt="Logo Desa Beringin">
+                    <div class="logo-text">
+                        <h1>Desa Beringin</h1>
+                        <p>Kecamatan Belang - Minahasa Tenggara</p>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="profil-desa.html">Profil Desa</a></li>
+                        <li><a href="#">Pemerintahan</a></li>
+                        <li><a href="data-desa.html">Data Desa</a></li>
+                     
+                        <li><a href="#">Galeri</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="agenda-desa.html">Agenda Desa</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Agenda Desa Beringin</h1>
+            <p>Dokumentasi lengkap kegiatan desa yang sudah berjalan, sedang berlangsung, dan rencana kegiatan mendatang</p>
+        </div>
+    </section>
+
+    <!-- Agenda Tabs -->
+    <div class="container">
+        <div class="agenda-tabs">
+            <button class="agenda-tab past active" data-tab="past">
+                <i class="fas fa-check-circle"></i> Kegiatan Selesai
+            </button>
+            <button class="agenda-tab present" data-tab="present">
+                <i class="fas fa-spinner"></i> Sedang Berjalan
+            </button>
+            <button class="agenda-tab future" data-tab="future">
+                <i class="fas fa-calendar-plus"></i> Akan Datang
+            </button>
+        </div>
+
+        <!-- Past Activities -->
+        <div id="past" class="tab-content active">
+            <section class="activity-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-history"></i> Kegiatan yang Sudah Berjalan</h2>
+                    <div class="section-subtitle">Dokumentasi kegiatan desa yang telah dilaksanakan</div>
+                </div>
+                
+                <div class="activity-grid">
+                    <!-- Activity 1 -->
+                    <div class="activity-card past">
+                        <div class="activity-media">
+                            <img src="gambar/menyapu.JPEG">
+                            <div class="media-type">
+                                <i class="fas fa-images"></i> Foto Dokumentasi
+                            </div>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span class="date-badge"> - </span>
+                            </div>
+                            <h3 class="activity-title">Gotong Royong Pembersihan Lingkungan</h3>
+                            <p class="activity-description">
+                                Kegiatan bersih-bersih lingkungan desa yang melibatkan seluruh warga untuk menjaga kebersihan dan keindahan desa.
+                            </p>
+                            <div class="activity-stats">
+                                <div class="activity-participants">
+                                    <i class="fas fa-users"></i> Seluruh Masyarakat Desa
+                                </div>
+                                <div class="status-badge status-completed">Selesai</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity 2 -->
+                    <div class="activity-card past">
+                        <div class="activity-media">
+                            <img src="gambar/blt.JPEG">
+                            <div class="media-type">
+                                <i class="fas fa-images"></i> Foto Dokumentasi
+                            </div>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span class="date-badge">23 Juli 2025</span>
+                            </div>
+                            <h3 class="activity-title">Penyaluran BLT</h3>
+                            <p class="activity-description">
+                                program bantuan sosial (bansos) dari pemerintah Indonesia yang diberikan secara tunai kepada masyarakat miskin dan rentan.
+                            </p>
+                            <div class="activity-stats">
+                                <div class="activity-participants">
+                                    <i class="fas fa-user-tie"></i> Keluarga Kurang Mampu
+                                </div>
+                                <div class="status-badge status-completed">Selesai</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity 3 -->
+                    <div class="activity-card past">
+                        <div class="activity-media">
+                            <img src="gambar/PMT.JPEG" alt="Bantuan Sosial">
+                            <div class="media-type">
+                                <i class="fas fa-images"></i> Foto Dokumentasi
+                            </div>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span class="date-badge">16 Oktober 2025</span>
+                            </div>
+                            <h3 class="activity-title">Kegiatan PMT</h3>
+                            <p class="activity-description">
+                                Program intervensi gizi untuk mengatasi masalah kekurangan gizi untuk mencegah dan menangani gizi buruk pada balita dan anak, meningkatkan status gizi ibu hamil dan menyusui, memperbaiki asupan nutrisi kelompok rentan.
+                            </p>
+                            <div class="activity-stats">
+                                <div class="activity-participants">
+                                    <i class="fas fa-user-friends"></i> -
+                                </div>
+                                <div class="status-badge status-completed">Selesai</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Present Activities -->
+        <div id="present" class="tab-content">
+            <section class="activity-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-spinner"></i> Kegiatan Sedang Berjalan</h2>
+                    <div class="section-subtitle">Kegiatan yang sedang dilaksanakan saat ini</div>
+                </div>
+                
+                    
+                    <!-- Activity 2 -->
+                    <div class="activity-card present">
+                        <div class="activity-media">
+                            <img src="gambar/program_paud.JPEG">
+                            <div class="media-type">
+                                <i class="fas fa-images"></i> Foto Kegiatan
+                            </div>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span class="date-badge">2025</span>
+                            </div>
+                            <h3 class="activity-title">Program Pendidikan Anak Usia Dini</h3>
+                            <p class="activity-description">
+                                Program pendidikan dan pengasuhan untuk anak usia dini di desa, meliputi pembelajaran dan permainan edukatif.
+                            </p>
+                            <div class="activity-stats">
+                                <div class="activity-participants">
+                                    <i class="fas fa-child"></i> Anak - anak
+                                </div>
+                                <div class="status-badge status-ongoing">Berlangsung</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </section>
+        </div>
+        
+        <!-- Future Activities -->
+        <div id="future" class="tab-content">
+            <section class="activity-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-calendar-alt"></i> Kegiatan yang Akan Datang</h2>
+                    <div class="section-subtitle">Rencana kegiatan desa dalam waktu dekat</div>
+                </div>
+                
+                <div class="activity-grid">
+                    <!-- Activity 1 -->
+                    <div class="activity-card future">
+                        <div class="activity-media">
+                            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Festival Budaya">
+                            <div class="media-type">
+                                <i class="fas fa-images"></i> Ilustrasi Kegiatan
+                            </div>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span class="date-badge"> - </span>
+                            </div>
+                            <h3 class="activity-title"> - </h3>
+                            <p class="activity-description">
+                        
+                            </p>
+                            <div class="activity-stats">
+                                <div class="activity-participants">
+                                    <i class="fas fa-star"></i> Persiapan
+                                </div>
+                                <div class="status-badge status-upcoming">Akan Datang</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity 2 -->
+                    <div class="activity-card future">
+                        <div class="activity-media">
+                            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pelatihan UMKM">
+                            <div class="media-type">
+                                <i class="fas fa-images"></i> Ilustrasi Kegiatan
+                            </div>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span class="date-badge">-</span>
+                            </div>
+                            <h3 class="activity-title">-</h3>
+                            <p class="activity-description">
+                                -
+                            </p>
+                            <div class="activity-stats">
+                                <div class="activity-participants">
+                                    <i class="fas fa-laptop"></i> 
+                                </div>
+                                <div class="status-badge status-upcoming">Terbuka</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Activity 3 -->
+                    <div class="activity-card future">
+                        <div class="activity-media">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Turnamen Olahraga">
+                            <div class="media-type">
+                                <i class="fas fa-images"></i> Ilustrasi Kegiatan
+                            </div>
+                        </div>
+                        <div class="activity-content">
+                            <div class="activity-date">
+                                <i class="far fa-calendar-alt"></i>
+                                <span class="date-badge">-</span>
+                            </div>
+                            <h3 class="activity-title">-</h3>
+                            <p class="activity-description">
+                                -
+                            </p>
+                            <div class="activity-stats">
+                                <div class="activity-participants">
+                                    <i class="fas fa-laptop"></i> -
+                                </div>
+                                <div class="status-badge status-upcoming">Akan Datang</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+
+        
+        <!-- Back to Home Button -->
+        <div style="text-align: center; margin: 50px 0 30px;">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-home"></i> Kembali ke Beranda
+            </a>
+        
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Desa Beringin</h3>
+                    <p>Desa mandiri dan sejahtera dengan mengedepankan nilai-nilai gotong royong dan kearifan lokal.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/kkt145_beringin?igsh=OGdxMzBqdGg1dTlm" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="https://youtu.be/3gjG8HdR-gs?si=_HHMlJ5W0syhxo0Q" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/qr/SGDWAM5EL74LE1" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Menu Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-home" style="margin-right: 8px;"></i>Beranda</a></li>
+                        <li><a href="#"><i class="fas fa-info-circle" style="margin-right: 8px;"></i>Profil Desa</a></li>
+                        <li><a href="data-desa.html"><i class="fas fa-database" style="margin-right: 8px;"></i>Data Desa</a></li>
+                        <li><a href="agenda-desa.html"><i class="fas fa-calendar-alt" style="margin-right: 8px;"></i>Agenda Desa</a></li>
+                        <li><a href="#"><i class="fas fa-landmark" style="margin-right: 8px;"></i>Pemerintahan</a></li>
+                        <li><a href="#"><i class="fas fa-concierge-bell" style="margin-right: 8px;"></i>Layanan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Agenda Desa</h3>
+                    <ul class="footer-links">
+                        <li><a href="agenda-desa.html#past"><i class="fas fa-check-circle" style="margin-right: 8px;"></i>Kegiatan Selesai</a></li>
+                        <li><a href="agenda-desa.html#present"><i class="fas fa-spinner" style="margin-right: 8px;"></i>Sedang Berjalan</a></li>
+                        <li><a href="agenda-desa.html#future"><i class="fas fa-calendar-plus" style="margin-right: 8px;"></i>Akan Datang</a></li>
+                        <li><a href="#"><i class="fas fa-lightbulb" style="margin-right: 8px;"></i>Usulan Kegiatan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak Darurat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-shield-alt" style="margin-right: 8px;"></i>Polisi: 110</a></li>
+                        <li><a href="#"><i class="fas fa-ambulance" style="margin-right: 8px;"></i>Ambulan: 118/119</a></li>
+                        <li><a href="https://wa.me/qr/SGDWAM5EL74LE1" target="_blank"><i class="fab fa-whatsapp" style="margin-right: 8px;"></i>WhatsApp Desa</a></li>
+                        <li><a href="#"><i class="fas fa-clinic-medical" style="margin-right: 8px;"></i>Poskesdes: 085341961076</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Desa Beringin. Hak Cipta Dilindungi.</p>
+                <p style="margin-top: 5px; font-size: 12px;">Dokumentasi kegiatan desa untuk transparansi dan akuntabilitas</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab Switching Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.agenda-tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    
+                    // Show corresponding tab content
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Video lazy loading
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => {
+                video.addEventListener('click', function() {
+                    if (video.paused) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                });
+            });
+            
+            // Check URL hash for direct tab access
+            const hash = window.location.hash.substring(1);
+            if (hash && ['past', 'present', 'future'].includes(hash)) {
+                const button = document.querySelector(`.agenda-tab[data-tab="${hash}"]`);
+                if (button) {
+                    button.click();
+                }
+            }
+            
+            // Gallery image lightbox (basic)
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const imgSrc = this.querySelector('img').src;
+                    const imgAlt = this.querySelector('img').alt;
+                    
+                    // Create lightbox
+                    const lightbox = document.createElement('div');
+                    lightbox.style.cssText = `
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0,0,0,0.9);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 9999;
+                        cursor: pointer;
+                    `;
+                    
+                    const img = document.createElement('img');
+                    img.src = imgSrc;
+                    img.alt = imgAlt;
+                    img.style.cssText = `
+                        max-width: 90%;
+                        max-height: 90%;
+                        border-radius: 10px;
+                        box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+                    `;
+                    
+                    lightbox.appendChild(img);
+                    document.body.appendChild(lightbox);
+                    
+                    lightbox.addEventListener('click', function() {
+                        document.body.removeChild(lightbox);
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
